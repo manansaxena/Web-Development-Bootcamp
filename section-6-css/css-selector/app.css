@@ -1,0 +1,110 @@
+/* 
+Universal selector selects every element on the page and applies that property to it even if it's not relevant to that element.
+* {
+    color: pink;  So in this example it will convert every text available on page to pink.
+}
+*/
+
+/* ELement Selector - Selects everything of a given type */
+button {
+    font-size: 20px;
+    background-color: #14213d;
+    color: #ffffff;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+span {
+    color: #14213d;
+}
+/* Selector list - helps to combine various selectors together and applies those properties to every member of the list */
+h1,h2 {
+    color: #14213d;
+}
+
+/* id selector - it's used to give style to a single element specifivally. And keep in mind that one id should be used only once on the page */
+#login {
+    background-color: #fca311;
+    color: #14213d ;
+}
+
+/* Class selector is used to style certain elements in a group similarly. Which also means that multiple elements can have the same class. */
+.tag {
+    background-color: #fca311;
+    font-size: 16px;
+}
+
+/* Descendent Selector is used to select all descendents of the parent element */
+.post a {
+    color: #14213d;
+}
+
+/* Adjacent Selector/Combinator - select elements(p) that are immediately preceded by an element(h1) | same level| no level down */
+/* h2 + button {
+    font-size: 15px;
+} */
+
+/* Direct Child - select only the element(li) that are a direct children of an element(div) | one level down*/
+footer > a {
+    color: #e5e5e5;
+    background-color: #14213d;
+}
+
+/* attribute selector - select elements based upon some attribute (even class and id as both are attribute) */
+input[type="text"]{
+    color: teal;
+}
+
+a[href*="reddit"]{
+    color: yellowgreen;
+}
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors */
+
+/* Pseudo CLasses - keyword added to a selector that specifies a special state of element(s) 
+    :active,:checked,:first,:first-child,:hover,:not(),:nth-child(),:nth-of-type() etc 
+*/
+footer a:hover {
+    text-decoration: tomato underline wavy 2px;
+}
+.post button:hover {
+    background-color: #fca311;
+}
+
+.post button:active {
+    background-color: aquamarine;
+}
+
+.post:nth-of-type(2n+1){
+    background-color: #e9c48a;
+}
+
+/* Pseudo Elements - Keyword added to a selector that lets you style a particular part of the selected element(s) */
+.post h2::first-letter {
+    color: blanchedalmond;
+}
+
+.post h2::selection {
+    background-color: brown;
+}
+
+h1,h2 {
+    color: crimson;
+}
+
+/* Specificity - 
+    more specific wins. 
+    General rule of thumb - !important > inline > id > class,attribute,pseudo selectors > element,pseudo element
+*/
+/* 
+button {
+    background-color: darkgreen !important;
+} */
+
+/* we can do this for inheritance - takes the value from closest parent
+
+button {
+    color: inherit;
+}
+*/

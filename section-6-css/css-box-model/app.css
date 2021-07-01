@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    /* background-color: #52b69a; */
+}
+
+h1 {
+    background-color: #1a759f;
+    padding-left: 100px;
+    padding-top: 50px;
+    width: 100px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#one {
+    background-color: #d9ed92;
+    border-width: 5px;
+    border-color: #168aad;
+    border-style: groove;
+    /* box-sizing: border-box;  If we use this then it sets the total length to be width and height and hence the border eats out the space of content-box */
+}
+
+#two {
+    background-color: #b5e48c;
+    border-width: 5px;
+    border-style: inset;
+    border-color: #1e6091;
+    border-left-style: dashed;
+    margin: 200px;
+}
+
+#three {
+    background-color: #52b69a;
+    border: 5px solid #000;
+    border-left-style: dashed;
+    border-radius: 0% 10%;
+}
+
+button {
+    background-color: #184e77;
+    color: white;
+    /* padding: 20px; */
+    /* padding: 5px 10px; */
+    /* padding: 5px 10px 0px; */
+    padding: 10px 20px 10px 20px;
+}

@@ -1,0 +1,26 @@
+Arrays-
+    - Ordered collection of values
+    - typeof gives object
+    - index starts with 0
+    - if we have an array of length 3 and we try to assign something to index 10 then the indexes in between are filled with undefined.
+    - methods
+        - push (end)
+        - pop (end)
+        - shift (remove from start)
+        - unshift (add to start)
+        - concat (merge arrays)
+        - includes (looks for a value)
+        - indexOf (just like string indexOf)
+        - join (creates a string from an array)
+        - reverse (reverses an array) // destructive method that is it changes the original
+        - slice (copies a portion of an array)
+        - splice (removes/replaces elements)
+            - destructive
+            - syntax -
+                - array.splice(start,items_to_delete,items_to_add/replace with)
+        - sort (sorts an array) // converts each entry into string and then compares their utf-16 code values.
+        - === will give false even if two arrays are same because JS compares the memory reference and not what inside the array
+        - const is used with array because the variable acts as a reference to the memory address, so we can change anything in the 
+          array. But the address or reference would remain the same
+        - Nested Arrays - 
+            - we can store arrays in an arrays

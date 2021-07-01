@@ -1,0 +1,99 @@
+DOM
+    - Document, Object, Model
+    - A JS representation of a webpage
+    - It's your JS's 'window' to the content on the webpage
+    - It's just a bunch of objects that you can interact with using JS
+    - When we are loading a webpage, HTML+CSS goes in and we get a bunch of JS objects coming out
+        - Keep in mind that even body gets and object and all of these has a relationship defined. We can think of them
+          being represented in a form of tree structure.
+    - The first object we get, under which every others are found is the Document object
+        - It's our entry point into the world of DOM
+        - It contains representations of all the content on the page, plus tons of useful methods and properties
+
+    Selecting - 
+        - Use JS to single out maybe one element or all elements of a class or all elements of a certain type.
+          Just like we do in CSS for example changing the colour of all anchor tags
+        - 1) Select 2) Manipulate
+        - getElementById
+            - when we call it we pass in a string. If the id exists, it returns the element and if not found it returns null.
+            - when we do this, we are asking js to fetch the DOM object
+        - getElementsByTagName
+            - in this we pass on a tag and it returns us an html collection which consists of all those tags in the page
+        - getElementsByClassName
+            - we are selecting by a class
+        - querySelector
+            - a newer all in one method to select a single element
+            - we pass in the same form of selector that we pass in css
+            - just gives us the first match
+        - querySelectorAll 
+            - similar idea but gives a collection of matching elements
+    
+    Manipulating
+        - important properties
+            - classList                 - setAttribute()      - removeChild()           - innerText         - value
+            - getAttribute()            - appendChild()       - remove()                - textContent       - parentElement
+            - append()                  - prepend()           - createElement           - innerHTML         - children
+            - nextSibling               - previousSibling     - style
+        
+        - innerText vs textContent 
+            - textContent gets all the content include <script> and <style> whereas innerText only gets the human readable content
+        - innerHTML 
+            - it displays the html code along with all tags and everything
+            - if we want to change something like italcize a text then we need innerHTML as the browser knows to read it as HTML.
+              innerText would just read it as normal text
+        - getAttribute vs .attribute access
+            - the first one directly brings from html whereas the other one is what js brings us.
+            - they are mostly the same but differ in few cases like href
+        - style 
+            - the style attribute doesn't contain any styles that we define in our external css. It only contains the styles which are inline.
+            - now we can change those styles if we want to.
+            - to get the actual styles that our browser in showing we use window.getComputedStyle(element)
+        - classList
+            - to set a class we can use setAttribute but it becomes very cumbersome to add multiple classes
+            - hence use classList
+            - an object that helps us store what classes the element has. Control, retrieve and manipulate them.
+            - it has a method add, remove, contains(to check if it has a particular class), toggle(toggles between the class being present or absent)
+        
+        - traversing parent/childern/siblings of a given element
+            - .parentElement
+            - .childElementCount
+            - .nextSibling - this gives the next node. Bear in mind that many browsers assign return's, text etc as text dom nodes. So we might get those if we use this
+            - .previousSibling - this gives the previous node.
+            - .nextElementSibling - gives the next element
+            - .previousElementSibling - gives the previous element
+
+        - creating new elements
+            - .createElement (creates a dom object of the tag we pass in)
+            - appendChild (to append an dom object)
+            - append (we can append multiple objects at the same time. It also lets us append text directly)
+            - prepend (to be added as the first child of the parent)
+            - insertAdjacentElement()
+                - targetElement.insertAdjacentElement(position,element);
+                    - position:
+                        - beforebegin
+                        - afterbegin
+                        - beforeend
+                        - afterend
+        - Removing
+            - removeChild()
+                - a little annoying as it makes us select the parent and pass in the element we want to delete as an argument
+            - remove()
+                - it's called on the actual element we want to remove
+
+
+
+
+
+
+
+
+
+
+
+    //IMPORTANT//
+    If we just print Document on the console then it would give us something which looks like a html code.
+    if we do console.dir(element) it then shows all properties
+
+    HTMLCollection - 
+        - They are like array but not exactly the same. We can indexing and all.
+        - They contain objects

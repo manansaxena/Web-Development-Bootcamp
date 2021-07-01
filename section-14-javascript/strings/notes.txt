@@ -1,0 +1,28 @@
+Strings
+    - They represent text and must be wrapped in quotes.
+    - we can use either double or single. But remember consitent in codebase.
+    - we can use the other type of quote within a quote
+    - they are indexed with index starting from 0.
+    - has a function - length
+    - can't update one character at a time, can only completely overwrite the string.
+    - strings have built in methods
+        - syntax 
+            - thing.method()
+            - for methods with arguments
+                - thing.method(arg)
+    - for slice if negative, then the beginIndex = string.length + beginIndex(given).
+    - Template Literals
+        - are strings that allow embedded expressions, which wiil be evaluated and then turned into a resulting string.
+        - it should be in back-ticks
+        - `I counted ${3+7} sheeps` => "I counted 7 sheeps"
+
+Undefined and Null primitive types
+    - Null  
+        - intentional absence of any value
+        - must be assigned
+    - Undefined 
+        - variables that do not have any assigned value are undefined.
+
+Math Object
+    - contains properties and methods for mathematical constants and functions
+    - Math.random() gives a random number between 0 and 1(not inclusive).

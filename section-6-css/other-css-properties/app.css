@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+}
+
+section {
+    background-color: #3a6ea5;
+    width: 500px;
+    height: 500px;
+}
+
+#rgba {
+    background-color: rgba(235, 235, 235,0.7);
+    width: 50%;
+    height: 50%;
+}
+
+#opacity {
+    background-color: #ff6700;
+    width: 50%;
+    height: 50%;
+    opacity: 0.2;
+}

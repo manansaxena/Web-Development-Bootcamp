@@ -1,0 +1,34 @@
+Decisions
+
+1) Comparisons-
+    - >,<,>=,<=,==,!= (The obivious ones)
+    - === (strict equality)
+    - !== (strict inequality)
+    - ==
+        - Checks for equality of value, but not equality of type
+        - It coerces both values to the same type and then compares them.
+        - This can lead to some unexpected values.
+    - ===
+        - Check for equality of value and type
+2) Console
+    - .log - prints argument to the console
+    - .warn - gives out a warning
+    - .error - to send out error
+3) alert - to send out annoying pop up alert
+4) prompt - asks user for an input - we get a string
+5) parseInt - used to convert string to integer
+            - If we write something like '101dasjda' then it would give us 101 only.
+6) Conditional Statements
+    - if - look for syntax in code file
+
+7) Truthyness and Falsyness
+    - Every value in JS has an inherent Truthyness or Falsyness about them
+    - All values are truthy except
+        - false 
+        - 0
+        - ""
+        - null
+        - undefined
+        - NaN
+8) 3 major logical operators -
+    &&, ||, ! - and, or, not

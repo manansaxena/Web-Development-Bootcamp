@@ -1,0 +1,60 @@
+Bootstrap
+
+1) Components: Gives us an access to pre-built components that we can incorporate in our own website
+2) Grid System: Comes with a grid system which helps us construct our own custom responsive layouts
+
+3) Layout:
+    - Container
+        - Containers are the most basic layout element in Bootstrap and are required when using our default grid system. Containers are used to contain, pad, and (sometimes) center the content within them. While containers can be nested, most layouts do not require a nested container.
+        - Bootstrap comes with three different containers:
+            - container, which sets a max-width at each responsive breakpoint
+            - container-fluid, which is width: 100% at all breakpoints
+            - container-{breakpoint}, which is width: 100% until the specified breakpoint, when starting from lower side of the order
+
+4) Components
+    - Buttons
+        - Everything we do with buttons involves the class "btn"
+        - best way is to just go through documentation (https://getbootstrap.com/docs/4.6/components/buttons/)
+
+    - Typography
+    - Colours
+    - Badges
+    - Alerts
+    - responsive image
+
+5) Grid System-
+    - If we want to use grid then we should always have a container class
+    - Next thing we must need is creating a div with a class of "row"
+    - All the content will go in this row and each row has 12 units of space to divide between content
+    - Then we add columns in this row.
+    - And of course we can have multiple rows.
+    - We can have nested containers.
+    - Grid option to make dynamic layout
+        - Extra Small: <576px col-
+        - Small: >=576px col-sm
+        - Medium: >=768px col-md
+        - Large: >=992px col-lg
+        - Extra Large: >=1200px col-xl
+    - How to read it ?
+        - col-md-6: After the medium breakpoint or up, it should take 6 units and everything below it's assumed that it goes all the way across.
+    - No gutters -  to remove space in between
+    - align-items
+        - center, start, end across the cross axis.
+    - align-self
+        - center,start, end across the cross axis
+    - justify-content
+        - all of these and above utility properties also have dynamic nature ie. we can add -sm,-md etc
+
+6) responsive images
+    - class -  img-fluid, which basically scales the images as we change the view.
+
+7) Forms 
+    - for all input items we have to add the form-control class
+    - div have a class of form-group which groups the input and the label together and makes them look together
+    - we can divide up the inputs just like in grid system
+    - checkboxes radiobuttons are complex hence just copy the code from website
+
+8) Icons
+    - we can use icons with input groups also
+
+9) margin and padding awesome - property-sides-breakpoint-size

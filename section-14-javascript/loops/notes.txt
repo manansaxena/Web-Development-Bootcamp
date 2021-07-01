@@ -1,0 +1,17 @@
+Loops
+    - Different types
+        - for
+        - while
+        - for...of
+        - for...in
+    - Infinite Loops    
+    - Nested
+
+Iterating over an object_literal
+    - for...of doesnt work as object_literal isn't iterable
+    - we can use the for...in which gives us only the keys of the object_literal.
+        - for...in is very rarely used nowadays.
+    - or we can use object_literal methods
+        - Object.keys(object_literal) # gives us an array of keys
+        - Object.values(object_literal) # gives us an array of values
+        - Object.enteries(object_literal) # gives us a nested list of object_literal

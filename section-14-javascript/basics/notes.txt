@@ -1,0 +1,44 @@
+Basics
+
+1) Primitive Types:
+    - Number
+    - String
+    - Boolean
+    - Null 
+    - Undefined
+    - Symbol
+    - BigInt
+2) REPL - Read Evaluate Print Loop
+3) Numbers-
+    - JS has only one number type which includes positive, negative, whole(integers), decimals
+    - And obviously there is a hard limit on how big or how much memory a number can store
+    - Follows BODMAS
+    - NaN:
+        - Not a number
+        - numeric value that represents domwthing that is .. not a number
+        - 0/0, 1+ NaN
+        - typeof NaN shows a number
+        - Number.isNaN(NaN) => true
+4) // creates a comment.
+5) Variables - 
+    - They are like labels for values
+    - We can store a value and give it a name so that we can 
+        - refer back to it later
+        - use that value to do ... stuff
+        - or change it later
+    - syntax
+        - let someName = value;
+        - score +=,-=,*=,/= 3
+        - score ++, score--
+    - Const: Works just like let but you cannot change the value
+    - Var: was the old and only way to make a variable
+    - variables in javascript can change types. So we can change a numeric variable to boolean if we want.
+6) Boolean can take two values - true or false
+    - syntax    
+        - let someName = true;
+7) variable naming conventions
+    - no spaces
+    - can't start with a digit
+    - can contain _ and $ too.
+    - we use camel case in which each new word starts with uppercase except for the first word
+    - putting in "is" for boolean variable is goo. Like isGameOver instead of gameOver 

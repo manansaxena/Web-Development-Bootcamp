@@ -1,0 +1,45 @@
+DOM Events
+    - Events
+        - responding to user inputs and actions
+        - a small list of events
+            - click, drag, drop, hover, scroll, form submission, key press, focus/blur, mouse wheel,
+              double click, copying, pasting, audio start, screen resize, printing etc
+    - Inline Events
+        - not recommended
+        - you basically write js in the html file in the corresponding tags
+    - Onclick property
+        - it's advised to write this in separate external js file
+    - EventListener
+        - best way to add the dom events
+        - this is better
+            - because it lets us insert multiple properties on one event unlike the other two methods
+            - it has a lot of additional options we can pass in like capture,once,passive
+        - removeEventListener
+    - this keyword and event
+        - many a times we might want to apply same changes or events to different elements. So we can separate out the
+          function using this
+    - Event Object and Keyboard Events  
+        - Events Object is automatically passed into our callback function. We were not capturing it first but we can by putting in 
+          an argument in the function which normally people denote by ect,event,e etc
+        - We often rely on this because of the keyboard events
+            - if we want the letter or what we actually typed we use key
+            - if we want which key on the keyboard we pressed we use code
+    - Forms and Events
+        - Default behaviour when we submit a form is to go to a different page with the data
+        - By using js we stop that and try to do something with the data without reloading it
+        - Event we are listening for is submit and we will use the event object to prevent default(which is going to new page or refresh)
+        - .value on the object input is used to get what we entered
+        - every form object has a category of element which can be accessed by the name given in the form input
+
+        - There are two more common event type
+            - input - this is fired whenever an input changes but doesn't wait for blur or us leaving the input
+            - change - in this when we write some input/value in a text field or click a checkbox, we want it to do something
+                       instantly and not wait to submit or keypress. So anytime we change input and click outside or keypress
+                       we can see that change(it only fires when we are leaving it)
+    
+    - Event Bubbling
+        - If we have nested events for ex. we have an event on para and then a button inside the para. If we click button   
+          then it's going to fire it's event and then fire the para event.
+        - to stop this use stopPropogation() on the event object.
+    - Event Delegation
+        - we basically add EventListener to the parent element so that when the children are added dynamically they still respond

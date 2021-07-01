@@ -1,0 +1,21 @@
+h2 {
+    color: cornflowerblue;
+}
+
+button {
+    color: cadetblue;
+    background-color: lightyellow;
+}
+
+p {
+    color: lightpink;
+}
+
+body {
+    background-color: rgb(252, 252, 237);
+}
+
+
+/* We can use background to chaange colour but it can do a lot more than background-color 
+  
+*/

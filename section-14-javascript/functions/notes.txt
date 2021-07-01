@@ -1,0 +1,16 @@
+Functions
+    - allows us to write reusable, modular code
+    - syntax
+        - function funcName(){
+            // do something
+        }
+    
+    - arguments - inputs to a function
+        - function funcName(parameter){
+            // do something
+        }
+        - if we dont pass in any argument then it would have a value of undefined
+        - we can have multiple arguments, but it totally depends on order of matching
+    - every method is a function
+    - return
+        - stops the execution of the function

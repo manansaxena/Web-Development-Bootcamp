@@ -1,0 +1,9 @@
+The <table> represents tabular data — that is, information presented in a two-dimensional table comprised of rows and columns of cells containing data.
+
+The colspan attribute defines the number of columns a cell should span.
+
+Defines the number of rows a table cell should span over.
+
+The <form> represents a document section containing interactive controls for submitting information.
+
+Button in a form submits it by default. We can specifiy the behavious using the type attribute or javascript.

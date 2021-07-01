@@ -1,0 +1,33 @@
+Async JavaScript -
+    
+    - Call Stack
+        - How js knows what function is currently being run and what functions are called from within that function etc
+    - WebAPI's and Single Threaded
+        - At any given point in time, that single JS thread is running at most one line of js code
+        - So this might mean that if a particular line take 5sec, do we have to wait for 5sec?
+            - nope, we have a solution in the form of callback(basically feeding the function to web api and then executing it after some time)
+            - in this the js doesnt do the work, instead the browser does.
+            How ?
+                - browser comes with web API's which are able to handle certain tasks in background(like making requests or setTimeout)
+                - js callstack recoginizes these API functions and passes them off to browser to take care of them
+                - once the browser finished those tasks, they return and pushed onto the stack as a callback
+    - Callback
+        - they are fine to do with a setTimeout but it can lead to multiple nesting with numerous different functions being
+          invoked which in turns lead to callback hell
+    - Promises
+        - A promise is an object representing the eventual completion or failure of an asychronous function
+        - can have three states
+            - pending
+            - resolved
+            - rejected 
+        - A promise is a returned object to which you attach the callbacks, intead of passing callbacks to the function
+    - Async Function
+        - cleaner syntax for working with asychronous code
+        - syntax "makeup" for promises
+        - async
+            - it always returns a promise.
+            - if function returns a value, then promise will be resolved with that value
+            - if function throws an exception, the promise will be rejected
+        - await
+            - we can use await keyword only inside the async function
+            - it will pause the execution of the function until the promise is resolved

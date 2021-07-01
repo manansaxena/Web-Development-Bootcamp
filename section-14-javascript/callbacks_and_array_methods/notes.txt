@@ -1,0 +1,31 @@
+- Arrow Functions
+    - syntactically compact alternative to a regular function expression
+    - in arrow functions if we have only the return statement then we can remove the return keyword and conver {} to ()
+    - go through with this keyword...
+    - it works different with the arrow functions than normal functions
+
+- These are all array methods that require us to pass in a function as an argument.
+    - foreach
+        - accepts a callback function
+        - calls the function once per element in the array
+        - we just need to write the function, no need for calling it
+    - map
+        - creates a new array with the results of calling a callback on every element of the array
+    - filter
+        - creates a new array with all the elements that pass the test implemented by the provided function
+        - so the function return true or false for every element of the array
+    - find
+    - reduce
+        - executes a reducer function on each element of the array, resulting in a single value
+        - .reduce((accumulater,currentValue)=> {function define},initial value for accumulater)
+    - some
+        - similar to every but returns true if even one of the element passes the test
+    - every
+        - tests whether all the elements in the array pass the provided function.
+        - it always returns a boolean value
+
+- setTimeout
+    - we have to send a callback function and a time limit after which the function would be executed
+- setInterval
+    - we have to send a callback function and a time limit after which the function would be executed and repeated
+    - now to stop it, we store that setInterval into an id and call the clearInterval(id) function

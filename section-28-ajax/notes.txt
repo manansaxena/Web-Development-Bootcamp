@@ -1,0 +1,49 @@
+AJAX and APIs
+
+    - AJAX
+        - Asynchronous Javascript and XML
+        - Creating applications using js where we can load,fetch,send data. Or update the page behind the scenes without
+          the need of refreshing it every time for a change.
+        - we don't need the html,css,js every time we need something. We just want the data when we make ajax request
+    - APIs  
+        - Application Programming Interface
+        - A way to interact between different softwares
+        - WebAPI
+            - Interfaces which are http based
+            - They expose endpoints which responds with codes for other software to consume. Mainly a portal to get data only
+              and not everything else.
+    - JSON
+        - Javascript Object Notation
+        - The key of key-value pairs has to be in double quotes.
+        - It has null but doesnt have undefined
+    - HTTP Request and Postman
+      - Get - retrieving or getting information
+      - Post - sending data to impact server side like updating database
+      - HTTP Response - 
+        - body - data/content
+        - status code - standardized numeric code from the server to us client to tell us the situation of it
+          - for example if we use post with postman site then we get 405 that is not allowed. Server tells us that
+          - if it's starts with a 2 it means its good
+          - if it starts with a 3 it means a redirect which in neither good nor bad
+          - if it's start with a 4 then it means its an error on client side. that is what we are asking for is not correct
+          - 5 means server error Response
+        - headers
+          - a bunch of key-value pairs which represent meta-data for the response and the request we make
+      - Query Strings and headers
+        - key-value payers which we can pass into any url
+        - Anytime we see a : on api documentation, it means it's a variable something that we provide
+        - https://developer.mozilla.org/en-US/search?q=javascript - here q=javascript is a query string. Its a request we make.
+        - we use & operator add more queries. If we add some nonsense in query string, the api just ignores it
+    
+    - XMLHttpRequest
+      - the original way of sending requests via js
+      - doesn't support promises hence a lot of callbacks
+    - FetchAPI
+      - newer way of making a request using js
+      - supports promises
+      - it gives us a response back on which we can add .then and .catch
+      - annoyingly we don't get the data back with fetch. it resolves the promise on receiving the headers only
+      - to get the data we use .json() method, which again returns a promise which we can chain
+    - Axios
+      - built on fetch
+      - it combines the two steps of fetch into one

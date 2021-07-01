@@ -1,0 +1,32 @@
+1) Main parts in a box model 
+    - Content box
+    - padding
+    - border
+    - margin
+2) In very basic form, width and height defines the size of the Content box
+3) Main properties of border:
+    - border-width
+    - border-color
+    - border-style
+4) box-sizing: border-box;  /* If we use this then it sets the total length to be width and height and hence the border eats out the space of content-box*/
+5) border: width/style/color
+6) padding is the space between your content box and the border.
+7) padding has following properties-
+    - individual properties
+        - padding-left, padding-right, padding-top, padding-bottom
+    - shorthand property
+        - set all four sides at once
+8) 4 different ways of using padding 
+    -padding: 10px; Apply to all four sides
+    -padding: 5px 10px; Vertical | Horizontal
+    -padding: 5px 10px 5px; Top|Horizontal|Bottom
+    -padding: 10px 10px 0 20px; top|right|bottom|left
+9) Margin is the spacing outside of the border, typically between two elements. Similar to padding we have individual and shorthand properties.
+10) Display property first encounter - 
+    - Inline -  Width and Height are ignored. Margin and padding push element away horizontallly but not vertically.
+    - Block - Block elements break the flow of the document. Width, Height, padding and margin all are respected.
+    - Inline-Block - behave like an inline element but all four are respected.
+11) CSS Units
+    -percentage - it's always relative to something. Maybe to parent element or sometimes to the element itself.
+    - rems and ems - just look at the video if ever stuck!!
+    

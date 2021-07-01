@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <div class="container-md">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <a class="navbar-brand" href="#">
+                <!-- <img src="https://images.unsplash.com/photo-1567095740613-beef70b7e61c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" id="logo" alt=""> -->
+                <h5 style="display:inline">We See Everything</h5>
+            </a>
+            <div class="button navbar-toggler" data-toggle="collapse" data-target="#hello">
+                <div class="span navbar-toggler-icon"></div>
+            </div>
+            <div class="collapse navbar-collapse" id="hello">
+                <div class="navbar-nav">
+                    <a href="#" class="nav-item nav-link">First</a>
+                    <a href="#" class="nav-item nav-link">Second</a>
+                    <a href="#" class="nav-item nav-link">Third</a>
+                </div>
+            </div>
+        </nav>
+        <h1 class="display-3 text-center">Bootstrap <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-shuffle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z" />
+                <path
+                    d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z" />
+            </svg> <small class="text-muted">A practical guide</small><span
+                class="badge badge-pill badge-info">New</span></h1>
+        <p class="lead">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. <mark>Pariatur</mark> quasi libero obcaecati
+            molestias a. Itaque ut fugiat doloremque aperiam? Quos numquam at exercitationem id sint dignissimos, vero
+            eos doloremque sunt!
+        </p>
+        <input type="submit" class="btn btn-danger btn-lg" value="submitted">
+        <button type="button" class="btn btn-dark btn-lg">Dark</button>
+        <a class="btn btn-outline-warning" href="#" role="button">Link</a>
+        <button type="button" class="btn btn-lg btn-primary" disabled>Primary button</button>
+        <button class="btn btn-warning btn-lg">Updates <span class="badge badge-light">8</span></button>
+        <blockquote class="blockquote text-center text-white bg-dark">
+            <p>When time is bleak, worship to whatever you believe in</p>
+            <footer class="blockquote-footer text-white">Ayden Frost</footer>
+        </blockquote>
+        <div class="btn-group" role="group">
+            <button class="btn btn-dark">
+                First
+            </button>
+            <button class="btn btn-dark">
+                Second
+            </button>
+            <button class="btn btn-dark">
+                Third
+            </button>
+        </div>
+        <div class="div alert alert-danger alert-dismissible fade show" role="alert">
+            <h4 class="alert-heading">Oh yeah </h4>
+            Hey Jude!!
+            <button class="close" aria-label="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <h3 class="display-4">Forms in Bootstrap</h3>
+        <form action="#temp">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="textual">Enter the text</label>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">&</span>
+                        <input type="text" class="form-control" id="text" placeholder="Enter Something">
+                    </div>
+                   
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="state">states</label>
+                    <select name="state" id="state" class="form-control">
+                        <option value="UP">Uttar Pradesh</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    Default checkbox
+                </label>
+            </div>
+            <div class="form-group">
+                <div class="custom-checkbox custom-control">
+                    <input class="custom-control-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                    <label class="custom-control-label" for="flexCheckChecked">
+                        Bootstrap Custom checkbox
+                    </label>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

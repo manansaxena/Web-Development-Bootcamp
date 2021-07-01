@@ -1,0 +1,15 @@
+section div {
+    /* background-color: #77ACA2; */
+    /* background-image: url(https://images.unsplash.com/photo-1614769507210-bf9482e2f32f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80); */
+    width: 80%;
+    height: 500px;
+    margin:0 auto;
+    /* background-size: cover;
+    background-position: bottom; */
+    background:center/cover url(https://images.unsplash.com/photo-1614769507210-bf9482e2f32f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80);
+}
+
+section div h1{
+    font-size: 100px;
+    color: white;
+}

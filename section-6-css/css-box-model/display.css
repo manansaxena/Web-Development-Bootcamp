@@ -1,0 +1,25 @@
+h1 {
+    background-color: wheat;
+    border: 1px solid black;
+    width: 200px;
+    padding:50px;
+    margin: 40px;
+}
+
+span {
+    background-color: tomato;
+    border: 1px solid black;
+    width: 200px;
+    margin:200px;
+    padding:50px;
+    display: none;
+}
+
+div {
+    background-color: cadetblue;
+    border: 5px solid black;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 50px;
+}

@@ -1,0 +1,35 @@
+default params - just a way to pass in default values to function parameters.
+               - default params should always come after parameters who dont have a default value
+
+spread
+    - allows an iterable such as an array to be expanded(that mean remove the [] and treat each one of them as a single argument
+      and not as one huge block) in places where zero or more arguments(for function calls) or elements(array literals) are expected
+      or an object expression to be expanded in places where 0 or more key-value pairs(for object literals) are required
+    - for function calls    
+        - expands an iterable(array,string etc) into a list of arguments
+    - for array literals
+        - create a new array using an existing array. Spreads the element from one array into a new array
+    - for object literals
+        - copies properties of one object into another object literal
+        - if a property clashes, then the one that comes later wins
+
+Arguments object - 
+    - In every function we have this object
+    - It's an array-like object
+        - has a length property and floows indexing
+        - doesn't have array like methods
+    - contains all arguments passed to the function
+    - not available in arrow function
+rest params
+    - collects all remaining arguments into an actual array
+destructuring arrays
+    - an easier way to get values from array to be stored in variables
+
+destructuring object
+    - helps us pull out properties
+    - if we want to rename them use :
+    - if we want to set default values iff they doesnt exist in the object then use =
+
+destructuring params
+    - helps us in destructuring the params passed to functions
+        - ex - if we want only two properties of the object then only take two out of them by using destructuring

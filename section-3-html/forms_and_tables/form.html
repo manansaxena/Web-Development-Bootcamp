@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Forms</h1>
+    <form action="/tacos">
+        <div class="form-fields">
+            <label for="username">Enter Username</label>
+            <input type="text" placeholder="username" id="username" name="username">
+        </div>
+
+        <div class="form-fields">
+            <label for="password">Enter Password</label>
+            <input type="password" placeholder="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="color">Enter your Favourite Colour</label>
+            <input type="color" id="color" name="color">
+        </div>
+        
+        <div>
+            <label for="num">Range of prices</label>
+            <input type="number" id="num" min="0" max="20" step="2">
+        </div>
+        
+        <button type="submit">This button will Submit</button>
+        <button type="button">This Button won't Submit</button>
+        <input type="submit" value="This is using input tag">
+    </form>
+    <hr>
+    <button>This is outside the form</button>
+    <hr>
+    <br>
+    <form action="https://www.reddit.com/search/">
+        <label for="search">Enter what you want to search:</label>
+        <input type="text" name="q" id="search" placeholder="type something">
+        <button type="submit">Search reddit</button>
+    </form>
+    <form action="https://youtube.com/results">
+        <label for="search-youtube">Search Youtube:</label>
+        <input type="text" name="search_query" id="search-youtube" placeholder="type something">
+        <button type="submit">Search YouTube</button>
+    </form>
+
+    <h2>more inputs !!</h2>
+    <form action="/temp">
+        <input type="checkbox" name="agree" id="check" checked>
+        <label for="check">checked</label>
+        <input type="checkbox" name="agree" id="uncheck">
+        <label for="check">unchecked</label>
+        <p>
+            <label for="xs">XS</label>
+            <input type="radio" id="xs" name="size" value="xs">
+            <label for="m">M</label>
+            <input type="radio" id="m" name="size" value="m">
+        </p>
+        <p>
+            <label for="meal">Meal type?</label>
+            <select name="meal" id="meal">
+                <option value="Veg">Veg</option>
+                <!-- Use attribute selected to get a pre-selected value -->
+                <option value="Non-Veg" selected>Non-Veg</option> 
+            </select>
+        </p>
+        <p>
+            <label for="cheese">Amount of cheese</label>
+            <input type="range" id="cheese" name="cheese_amount" min="0" max="20" step="2" value="10">
+        </p>
+
+        <p>
+            <label for="tempo">tempo?</label>
+            <textarea name="temp" id="tempo" cols="30" rows="10" placeholder="woohoo"></textarea>
+        </p>
+        <button>submit</button>
+    </form>
+    <h2>Validation demo!</h2>
+    <form action="/temp">
+        <label for="place">place</label>
+        <input type="text" id="place" name="place" minlength="2" maxlength="10" required>
+        <button>submit</button>
+    </form>
+</body>
+</html>

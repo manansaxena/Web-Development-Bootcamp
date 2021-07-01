@@ -1,0 +1,40 @@
+body {
+    background-color: #14213D;
+}
+
+
+
+/* navbar */
+.logo {
+    color: rgb(255, 254, 254);
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.nav-color {
+    color: rgba(245, 245, 245, 0.87);
+}
+
+.navbar-nav > a{
+    font-size: 1.2rem;
+} 
+.navbar-nav > a:hover{
+    color: rgb(252, 163, 17);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255,0.7)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+  
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.7);
+    border-width: 0.05rem;
+}
+
+/* section -1 */
+
+@media (max-width: 1200px){
+    .heading h2{
+        font-size: 1.5rem;
+    }
+}

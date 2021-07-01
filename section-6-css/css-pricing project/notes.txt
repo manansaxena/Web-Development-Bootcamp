@@ -1,0 +1,2 @@
+1) CSS Reset
+    - Remove browser default styles

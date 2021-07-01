@@ -1,0 +1,34 @@
+1) Alpha Channel
+    - rgba(250,120,140,0.5) 
+    - varies between 0 and 1 with 0 being transparent and 1 being opaque.
+    - it will only effect the background-color of the element
+2) Opacity 
+    - Its a standalone property unlike alpha channel.
+    - it governs the transparency of all its content and its descendent unlike alpha channel
+    - it also goes from 0 to 1 
+3) Position property
+    - its sets how an element is positioned in the document
+    - static 
+        - the element is positioned according to the normal flow of the document. 
+        - top, right, bottom, left, z-index have no effect. This is the default value
+    - relative
+        - the element is positioned according to the normal flow of the document
+        - but can be offseted related to itself depending on the values of top,right,bottom,left
+    - absolute
+        - element is removed from the normal flow of the document and no space is created for it
+        - it is positioned relative to it's closest positioned parent else its relative to the intial containing block 
+    - fixed
+        - element is removed from the normal flow of the document and no space is created for it
+        - it is always positioned relative to the initial containing block. Hence, it is fixed even if we scroll down
+    - sticky
+        - it's not fixed first but once it reaches the top on scrolling it gets fixed.
+4) Transition format 
+    - Property name|duration|timing function|delay
+    - we can use all for all properties
+    - url for time function website https://easings.net/
+5) Transforms - 
+    -Bunch of them. Just check mdn or video
+    - Important thing to remember is that it applies to its content also.
+6) Box Shadow -
+    - offset-x|offset-y|blur-radius|spread-radius|color
+7) A bunch of background stuff - just watch video/mdn

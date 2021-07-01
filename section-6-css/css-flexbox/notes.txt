@@ -1,0 +1,61 @@
+Flexbox (life saver - https://css-tricks.com/snippets/css/a-guide-to-flexbox/#flexbox-background)
+
+1) It's a one dimensional layout method for laying out items in rows and columns
+2) It allows you to distribute space dynamically across elements of an unknown size
+3) Display property
+    - dispaly: flex; Its basically turning the flexbox property on for the element(in example case container)
+4) Axes
+    - Has two axis - main axis and cross axis.
+    - Main by default goes from left to right
+    - Cross by default goes from top to bottom
+5) Flex-Direction
+    - Helps us in deciding the direction of the main axis of the container
+    - default is flex-direction: row;
+    - we can have row, row-reverse, column, column-reverse
+    - determines the direction of the flow of content.
+6) Justify-Content 
+    - Determines how the content is actually distributed across the main axis
+    - values it can take
+        - flex-start
+        - flex-end
+        - center
+        - space-around(equal amount of space around each element),-between(space between elements but not outside edges),-evenly(space is even between element and boundaries)
+    - It always depends on which is the main axis, so it can be applied horizontally or vertically.
+    - It doesn't change the ordering of the content.
+7) Flex-Wrap
+    - It determines if our content is going to wrap along the main axis, so the content will flow along new line.
+    - If we use wrap-reverse, it reverses the direction of the cross axis. So the wrap direction changes.
+    - values- wrap, wrap-reverse, nowrap
+8) Align-items
+    - used for distributing the items on cross axis
+    - values - flex-start, flex-end, center, baseline(aligned according to the baseline of the text.)
+9) Align-Content
+    - Used to distribute the spacing along cross axis and it only works if we have multiple items across cross axis.
+    - so if cross is top to bottom then we should have multiple columns and this would determine the spacing between the columns
+    - Only works when we have wrapping
+10) Align-self
+    - similar to align-items but applied to individual elements and not on the entire container
+11) Flex Sizing properties - 
+    - for individual items in a flex container
+    - flex-basis - defines the initial size of the element before the additional space is distributed. It depends on the main axis direction
+    - flex-grow - controls the amount of available space an element should take up. Accepts a unit less number value
+        - we can limit flex-grow with min/max-width/height.
+        - if we give a larger number to one element than the rest then it will take more space as per the proportion.
+    - flex-shrink - if items are larger than the container they shrink according to flex-shrink
+        - similar to flex-grow but just the opposite, it shrinks if the space available is less than the element size
+12) Flex
+    - It's a shorthand property for flex-sizing properties.
+    - grow|shrink|basis
+
+Responsive Design and Media Queries
+
+1) Media Queries - Allows us to modify our styles depending on particular parameters like screen width or device type.
+2) Format :
+    @media (property) and (property) {
+        changes
+    }
+3) Properties:
+    - width
+    - min-width - if width lower - true
+    - max-width - if width higher - true
+4) Order in which we write the queries is important. Lower the query higher the priority. Of course if properties clash

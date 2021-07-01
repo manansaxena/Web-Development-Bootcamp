@@ -1,0 +1,8 @@
+Objects
+    - Are like dicitonaries in python
+    - are collection of properties
+    - properties are key-value pairs
+    - rather than accessing data using an index we use custom keys
+    - every key we are making in an object gets converted to a string
+    - difference between the two access method is that in [] these we can put an expression of code which will be evaluated first.
+    - object and array can be mixeed together in anyway

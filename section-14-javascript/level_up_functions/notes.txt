@@ -1,0 +1,37 @@
+Scope
+    - variable "visibility"
+    - the location where a variable is defined dictates where we have access to that variable
+    - Function Scope    
+        - if we define a variable of the same name in a function, then it references that first instead of the globally defined
+          variable. If it doesn't exist then it uses the global variable
+    - Block Scope   
+        - Variable defined inside a bock is accessible only inside of it
+        - var can be used to define a variable to negate or nulllify the block scope
+    - Lexical Scope
+        - An inner function has access to variable defined in the outer function. And this goes on for the entire hierarchy
+
+Function Expression
+    - Just another way of defining a function
+    - instead of a function name we store the function in a variable
+    - It shows that function in js is just like anyother value
+
+Higher Order Functions
+    - Functions that operate with/on other functions
+        - Accept other functions as arguments
+        - Return a function    
+
+Methods
+    - we can add functions as properties on an object
+    - and we call them methods
+    - every method is a function but not the other way around
+    - basically functions that we call by using .(dot) 
+        - "hello".toUpperCase()
+
+This 
+    - Use the keyword 'this' to access other properties on the same object
+    - inside a method, 'this' would refer to the parent object itself.
+
+try/catch
+    - we put the code which we thing might go wrong in the try and if something does go wrong we catch it.
+    - But the rest of the code after catch block executes normally
+    - in catch we have the option to get the e
