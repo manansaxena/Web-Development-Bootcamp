@@ -1,0 +1,25 @@
+Node Introduction
+    - What is Node ?
+        - A JS runtime
+            - That executes code outside of the browser
+            - We can use the same js syntax to write server-side code without relying on python or ruby
+    - What's it used for ?
+        - Web Servers
+        - Command Line Tools
+        - Native Apps like vscode
+        - Games and drone softwares etc etc
+    - Node REPL(Read Evaluate Print Loop)
+    - Node js vs client side js
+        - we don't have access to browser stuff in node. window, document, dom api's etc
+        - but it comes with a lot of built in modules which browsers dont have that helps us with accessing os and file system
+    - just like window represent a whole global scope in browser, in node that is "global"
+    - process
+        - its an object, available in global scope
+        - it includes info about and control over the current node.js process
+        - it has a bunch of methods
+            - version, release, cwd(), 
+            - process.argv
+                - returns an array containing the command line arguments passed when the node.js was launched. First it contains the node executable path, the second would be 
+                  the js file we are executing and then additional command line arguments
+    - filesytem - fs 
+        -  
