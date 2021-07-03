@@ -22,4 +22,11 @@ Node Introduction
                 - returns an array containing the command line arguments passed when the node.js was launched. First it contains the node executable path, the second would be 
                   the js file we are executing and then additional command line arguments
     - filesytem - fs 
-        -  
+        -   It is a module and has a lot of methods
+        -   All fs operations have a sync and async method 
+        -   The asynchronous form always takes a completion callback as its last argument. 
+            The arguments passed to the completion callback depend on the method, but the first argument is always reserved for an exception. 
+            If the operation was completed successfully, then the first argument will be null or undefined.
+        -   exception that occur using sync are thrown immediately
+        -   the sync version will block all the operations in the rest of the process before compeliting this
+        -   this module is to be included 

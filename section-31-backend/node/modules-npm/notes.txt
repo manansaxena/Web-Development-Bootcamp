@@ -1,0 +1,22 @@
+Modules
+    -   basically a way to link between separate js files. For example we might define some functionality in a different js files
+        and we require in this file. Similar to import.
+    -   by default we get an empty object when we import it in other file. We have to specify what we want to export using
+        module.export and that is what goes into the other file
+    -   multiple ways to do it, check math.js
+
+    -   Requiring a Directory
+        -   Many a times we may have a sub directory which has many files all linked to get one feature, we may want to include
+            the directory in our main file
+        -   To do this, we create an index file in that sub directory which has an array fetching all the other modules in that sub directory
+        -   Whatever,  index exports so will the entire directory. Index is like an entry point
+    
+    -   NPM
+        -   A library of thousands of packages made by other developers
+        -   A command line tool to easily install those packages and manage them in our
+            node projects
+        -   When we install a package, we also get a bunch of dependent modules stored in node-module folder
+            We also get a package-lock.json which basically enlists the version of various dependent modules
+        -   Local vs Global Installation of packages
+            -   Locally installed packages can't be used in other folders
+            -   To install something globally we add the '-g' flag and we may have to use npm link package_name to link it for local use 
