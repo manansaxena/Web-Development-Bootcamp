@@ -1,0 +1,31 @@
+Creating Servers with Express.js
+    -   Its a framework which helps us build web apps
+    -   It's just a NPM package which comes with a bunch of methods and optional plugins which helps us build web app and api's.
+    -   Important functionalities
+        -   start up a server to listen for requests
+        -   parse incoming requests
+        -   match those requests to particular routes
+        -   craft our http response and associated content
+    -   For every incoming request we have two parameters for the .use function 
+        -   request object
+        -   response object
+    -   HTTP request is atext information but express converts it into javascript object
+    -   Routing
+        -   A concept common with every framework
+        -   It means taking an incoming request which consists of path and then matching with that to code and some response
+        -   Every http request always responds only once
+        -   rutes are matched in order
+    -   Query String
+        -   its a portion of the url that comes after ? and contains key-value pairs
+
+Templating and Express
+    -   Templating allows us to set 'preset' pattern for a webpage, that we dynamically modify
+    -   for ex. we can create a single search template which displays all the results. We don't know how many or which results
+    -   are there. It is filled in on the fly.
+    -   if we are going to use some templating, express is going to assume that our templates exist in a directory named views
+    -   and now isntead of sending string via res.send, we will send a view using render function
+    -    by default if we are in a different directory than index.js then the views folder doesnt work 
+
+    -   EJS
+        -   <%= ... %> : Outputs the value into the template (HTML escaped). (the output is rendered)
+        -   <% ... %> : The output is not rendered

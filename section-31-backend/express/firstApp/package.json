@@ -1,0 +1,14 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "description": "my first express app bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ayden frost",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

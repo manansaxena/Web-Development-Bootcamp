@@ -20,3 +20,9 @@ Modules
         -   Local vs Global Installation of packages
             -   Locally installed packages can't be used in other folders
             -   To install something globally we add the '-g' flag and we may have to use npm link package_name to link it for local use 
+        -   Package.json
+            -   Basically contains the meta data like version, liscense, dependencies etc
+            -   we should use npm init to make our initial packages.json
+            -   now when we install a package we dont get a warning and it would show the package in dependencies
+            -   we don't usually share node modules when sharing the code, instead we share the package.json
+            -   to install all dependencies listed in package.json we use only "npm install"
