@@ -1,0 +1,46 @@
+SQL vs NoSQL
+    -   SQL databases are relational databases. We pre-define a schema of tables before we add anything
+    -   NoSQL doesnt use SQL. There are many type of NoSQL databases including document, key-value and graph stores
+    -   In NoSQL we dont follow a predefined schema
+
+MongoDB
+    -   create a databse - use <database_name>
+    -   to switch to a databse - use <database_name> // if already created
+    -   single document into a collection - db.collection.insertOne({...}) // document === record, collection === table
+    -   If collection doesnt exist, insertion will create one for us
+    -   show collections
+    -   to get all records of a collection - db.collection.find()
+    -   mongo assigns a primary key with the name of _id to each document of the collection
+    -   insert one or many - db.collection.insert([{...},{...},...])
+    -   db.collection.find({query}) to get documents which match the query. It returns a cursor(pointer) to the documents we got.
+    -   db.collection.findOne({query}) to get only one document which matches the query. In this we get the actual document
+    -   updating
+        -   updateOne - will update the first thing that matches , db.dogs.updateOne({"_id":ObjectId("60e43a80fba8964114c13ac2")},{$set:{name: 'martha',age: 1,breed:'street',catFriendly:false}})
+        -   updateMany - will update all
+        -   replaceOne  - if we wanted to change everything about the document while still keeping the id
+        -   $set is used to replace the value of the field with the specified value
+    -   delete
+        -   deleteOne
+        -   deleteMany - db.dogs.deleteMany({}) will delete everything in the collection
+    -   if fields are nested then we use something like - db.dogs.find({'person.name':'xyz'})
+    -   Query Selectors
+        -   Comparison operators
+            -   $gt : greater than a specified value
+                -   db.dogs.find({'qty':{$gt:30}})
+            -   $gte : greater or equal to a specified value
+            -   $lt : lesser than a specified value
+            -   $lte : lesser than or equal to a specified value
+            -   $in : matches all those records whose value matches with a value in an array of values passsed
+                -   db.dogs.find({'age':{$in:[2,3,4,5]}})
+            -   $ne: value is not equal to a specified value
+            -   $nin : matches all those records whose value doesnt matxh with a value in an array of valuse passed
+        -   Logical Expressions
+            -   $not,$nor,$and,$or
+                -   db.dogs.find({$or:[{age:{$lt:5}},{name:{$nin:['ayden','mutt']}}]})
+
+
+
+BSON vs JSON
+    -   JSON is very slow because of being text-based. Takes a lot of space and has a limited number of data types
+    -   BSON  
+        -   Binary JSON, regular json stored as binary

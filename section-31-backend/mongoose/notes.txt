@@ -1,0 +1,8 @@
+Mongoose
+    -   Helps us connect node and js to mongoDB
+    -   Object Data Mapper
+        -   ODMs like mongoose maps documents coming from a database into usable JS Objects
+        -   Mongoose provides us ways to model out application data and define a schema. It offers easy way to validate data and build complex
+            queries from the comfort of JS
+    -   Connecting Mongoose to mongoDB
+        

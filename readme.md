@@ -27,10 +27,10 @@
 ## Backend
 
 
-- [ ] Node.js
+- [x] Node.js
 - [x] Python
-- [ ] Mongoose
-- [ ] Express.js
+- [] Mongoose
+- [x] Express.js
 - [ ] Django/Flask
 - [ ] GraphQL
 - [ ] MongoDB

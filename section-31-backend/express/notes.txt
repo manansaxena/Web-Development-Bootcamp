@@ -29,3 +29,39 @@ Templating and Express
     -   EJS
         -   <%= ... %> : Outputs the value into the template (HTML escaped). (the output is rendered)
         -   <% ... %> : The output is not rendered
+    -   Till now we have been using only html to render our dynamic page, but mostly we need to send the related css and web js files to make it work
+        this is known as serving the static files in express
+    -   EJS Partials
+        -   A way of including subtemplates in other templates
+        -   <%- include('partial/head.ejs)%>
+
+Defining RESTful routes 
+    -   GET 
+        -   Used to retrieve information
+        -   Data is sent via query string
+        -   information is plainly visible in url
+        -   limited amount of data can be sent
+        -   this is usually done to change pages and what not
+    -   POST
+        -   Used to post data to the server
+        -   Used to write/create/update
+        -   Data is sent via request body and not via query string
+        -   can be sent any sort of data (JSON!!)
+        -   we can still have the query string but we also have the body
+        -   this is basically used to when we want to add or do something with database
+        
+    -   POST 
+        -   req.body -  key-value of data submitted in the request body
+                     -  undefined by default.
+                     -  we can recieve data in different formats hence we will have to specify how we are sending it in request
+    
+    -   REST 
+        -   Representational State Transfer
+            -   architectural style for distributed hypermedia systems
+            -   it's basically a set of guidelines for how a client + server should communicate and perform CRUD operations on a resource
+            -   The main idea of REST is treating data on server-side as resources that can be CRUDed
+            -   the most common way of approaching rest is in formatting the URLs and HTTP verbs in your application
+    -   Express Redirects
+        -   Redirects to a URL derived from a specified path
+        -   when the browser gets a 302 status code, it sends a folllow request based on the address mentioned
+    -   We use UUID for creating random id's 
