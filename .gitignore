@@ -1,0 +1,8 @@
+#dependencies
+/section-31-backend/express/firstApp/node_modules
+/section-31-backend/express/restRoutes/node_modules
+/section-31-backend/express/templating/node_modules
+/section-31-backend/express-and-mongoose/node_modules
+/section-31-backend/middleware/node_modules
+/section-31-backend/mongoose-tut/node_modules
+/yelpcamp/node_modules
