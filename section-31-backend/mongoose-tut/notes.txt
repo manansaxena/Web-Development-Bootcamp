@@ -1,0 +1,86 @@
+Mongoose
+    -   Helps us connect node and js to mongoDB
+    -   Object Data Mapper
+        -   ODMs like mongoose maps documents coming from a database into usable JS Objects
+        -   Mongoose provides us ways to model out application data and define a schema. It offers easy way to validate data and build complex
+            queries from the comfort of JS
+    -   Connecting Mongoose to mongoDB
+        -   we copy mongoose.connect line from the base doc 
+        -   mongoose.connect also accepts promises, so we can add catch to catch the error
+    -   Mongoose Model
+        -   which is js classes which me makes with the assistance of mongoose that represent information in some collection
+        -   we need to define a model in js file for each and every collection in the databse that we want to access
+        -   mongoose gives us a bunch of helper functions to interact with the database
+        -   we first need to define a schema
+            -   its a blueprint which basically is keys of a collection associated with specific data types
+            -   basically maps between the two, to make sure that when we get data from database it actually sends a value of 
+                type which our base language can handle
+        - few steps
+            -   from node repl, do .load index.js
+            -   we can now access the movie we created via js but it still doesnt add anything to mongo
+            -   to save it to mongo, we do object(whichever we created).save()
+            -    if we change something in repl but dont save it then it wont be reflected in mongo
+        -   Insert Many
+            -   Movie.insertMany([{},{},{}...])
+            -   This takes time so we get a promise. No need to call save
+        -   finding
+            -   we can treat the results we get back like a promise
+            -   but the actual results are not exactly promises but a mongoose query 
+            -   they are not full-fledged promises but are thenable objects
+            -   Movie.find({...}).then(data=>(...))
+            -   We can also use findOne iff we just want the first one specifically
+        -   updation
+            -   updateOne and updateMany
+                -   both these method don't give what was updated back instead it tells 
+                    us how many were modified. 
+            - findOneAndUpdate({query},{update},{option}), findByIdAndUpdate(id,{update},{option})
+                -   this is different as it gives an object with values of the doc that 
+                    was updated but by default returns the unupdated values.
+                    We can set an option - new to true to get new values
+        -   deletion
+            -   remove 
+                -   similar to update, doesn't give back any information except for the 
+                    deletedCount
+            -   findOneAndRemove and findByIdAndRemove
+            -   should use deleteOne or deleteMany but it still doesnt give the data back instead
+        
+        - schema validation
+            -   if we just write title:String in schema, then we are using the
+                shorthand version where it assumes that we are writing type. but if
+                we use the longer version then we can specify many more validations
+            
+            - like -    
+                -   required: true/false
+                -   default
+                -   select- boolean, specifies default projections for queries
+                -   validate - custom validator functions
+                -   immutable 
+                and many more
+                -   similarly individual types have validators like string has 
+                    maxLength, toUpperCase, trim, enum(gives an array with possible string values, input should be one of them) etc
+        -   validating mongoose updates
+            -   when we create new docs then it is validated but when we are updating something
+                then it doesn't check the validation
+            -   we have to add an option runValidators: true
+        -   Custom validator error messages
+            - min : [first vlaue is our validation, second value is the error message]
+        -   Model Instance Methods
+            -   custom functionalities added to our model instances
+        -   Model Static Methods
+            -   custom functionalities added to our model class, instances dont have access to them.
+            -   all instances would be changed because of these methods
+        -   Mongoose Virtuals
+            -   add properties to the schema that don't actualy exist in database
+                but we have access to them because of mongoose. they are usually a synthesis
+                of multiple properties from database or something that could be derived from the 
+                database
+            -   we can have a getter and a setter, when we call something and need sonething from it we use getter
+            -   using setter we can break down our virtual properties to change the database stored properties
+        -   Mongoose Middleware
+            -   Mongoose middleware are functions that can intercept the process of the init, validate, save, and remove 
+                instance methods. Middleware are executed at the instance level and have two types: pre middleware and post middleware.
+
+                Using pre middleware
+                Pre middleware gets executed before the operation happens. For instance, a pre-save middleware will get executed before the saving of the document. 
+                This functionality makes pre middleware perfect for more complex validations and default values assignment.
+            -   post act after the statement has occured

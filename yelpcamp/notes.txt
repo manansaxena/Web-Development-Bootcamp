@@ -1,0 +1,32 @@
+Yelpcamp 
+
+Section 39 - Campground Cruds
+    -   Create a basic express app
+    -   Set Up ejs and views directory
+    -   Create model
+    -   Create a seed database
+    -   Setup basic crud functionalities to see if everything is working
+
+Section 40 - Middleware (Express)
+    -   Express middleware are functions that run during requests/response lifecycle
+    -   Middleware are just function that run between getting the request and send the response.
+    -   Each middleware has access to the request and response objects
+    -   Middleware can send a HTTP request by sending back a response with methods like res.send()
+    -   OR middleware can be chained together,one after the another by calling next().
+    -   Morgan - a logging middleware
+    -   next() is used to run the next middleware inline, considering whichever matches the route
+    -   we have to know that we can send only one respone per request, so even if we try next() after a send then it won't do anything
+    -   More on app.use()
+        -   we can specify paths, to make sure that middleware runs only when we hit that route
+        -   in middleware we usually send next but in route handlers we render something
+        -   we can use app.use to perform a default 404 behaviour
+    -   most common pattern is to put it with one of the app routers, get,post ... 
+
+Section 41 - Adding basic styles - Yelpcamp
+    -  ejs-mate 
+        -   gives additional functionality to ejs
+        -   it has a property called layout, which allows us to create boilerplates
+        -   we have <%-body%> in boilerplate and for rest of the files we only keep the elements in body tag and 
+            use <% layout(path to boilerplate)%>
+Section 42 - Handling errors in express
+    -   

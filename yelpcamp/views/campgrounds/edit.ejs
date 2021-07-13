@@ -1,0 +1,38 @@
+<% layout('layouts/boilerplate') %> 
+<div class="row">
+    <h1 class="text-center">Edit Campground</h1>
+    <div class="col-6 offset-3 d-flex flex-column">
+        <form action="/campgrounds/<%= camp._id %>?_method=PUT " method="POST">
+            <div class="mb-3">
+                <label class="form-label" for="title">Enter the title</label>
+                <input class="form-control" type="text" name="campground[title]" id="title" value="<%= camp.title %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Enter the location</label>
+                <input class="form-control" type="text" name="campground[location]" id="location" value="<%= camp.location %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">$</span>
+                    <input type="number" class="form-control" placeholder="0.0" id="price" name="campground[price]" aria-label="price" aria-describedby="price-label" value="<%= camp.price %>">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Upload Image</label>
+                <input class="form-control" type="text" name="campground[image]" id="image" value="<%= camp.image %>">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="Description">Description</label>
+                <textarea class="form-control" type="text" name="campground[Description]" id="Description"><%= camp.description%></textarea>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-warning mt-1">Update Campground</button>
+            </div>
+        </form>
+        <div class="col-1 offset-11 mb-2">
+            <button class="btn btn-dark" type="button" onclick="location.href='/campgrounds/<%= camp._id %>'">Back</button>
+        </div>
+        
+    </div>
+</div>
