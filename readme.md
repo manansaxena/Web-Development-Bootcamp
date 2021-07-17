@@ -29,11 +29,11 @@
 
 - [x] Node.js
 - [x] Python
-- [] Mongoose
+- [x] Mongoose
 - [x] Express.js
 - [ ] Django/Flask
 - [ ] GraphQL
-- [ ] MongoDB
+- [x] MongoDB
 - [ ] MySQL
 - [ ] Socket.io
 - [ ] NGINX

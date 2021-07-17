@@ -1,6 +1,6 @@
 Yelpcamp 
 
-Section 39 - Campground Cruds
+Section 39 - Campground Cruds - Yelpcamp
     -   Create a basic express app
     -   Set Up ejs and views directory
     -   Create model
@@ -29,4 +29,44 @@ Section 41 - Adding basic styles - Yelpcamp
         -   we have <%-body%> in boilerplate and for rest of the files we only keep the elements in body tag and 
             use <% layout(path to boilerplate)%>
 Section 42 - Handling errors in express
+    -   express has default errors which basically are sent as a response as an html with 500.. error code
+        -   when error is written, following information is added
+            -   res.statusCode is set from err.statusCode. If it's outside the range of 4xx or 5xx then it's set to 500.
+            -   res.statusMessage is set according to the status code
+            -   the body will be html of the status code if in production enviroment else it would be err.stack
+            -   any headers specified in err.headers object
+    -   we can throw new Error(...) and it will change the message of the default error
+    -   custom error handlers   
+        -   any middleware function can be defined as the error handling function, just pass in err,req,res,next
+        -   it should be put at the bottom of the routes
+        -   next(err) will send it to the next error handling middleware, which would be the default one if we have a single error middleware.
+    -   custom error class
+        -   we can set an error code for every error we face, but that's too much work so we create an error class.
+        -   we can define a bunch of things, in the tut we did status and message.
+        -   we can then throw an error by creating a new instance of the class and passing in the arguments
+    -   async error
+        -   for async error we can't just normally throw an exception. instead we have to pass the object instance into the next function.
+        -   TO TEST THIS GOING TO express-and-mongoose
+        -   to catch all the errors, which might occur from mongoose too. So to do that we use try-catch and then invoke the
+            next function in the catch block.
+        -   to reduce the code of writing try and catch again and again, we instead define a function that takes in our 
+            async function and then returns a function with catch attached to it.
+    -   Differentiating mongoose errors
+        -   Every mongoose error has a name
+            -   ValidationError, CastError etc
+            -   we can single out these error, for ex.
+                -   if(err==='ValidationError') e = handleValError(err)
+                    next(e) 
+            -   and then we can define handleValError anyway we want, just make sure to written an err for further middleware to 
+
+Section-43 Errors and Validation (Yelpcamp)
+    -   Client-side form Validation
+        -   We use the bootstrap validators
+    -   Setup a basic error and then an error class and wrapAsync function
+    -   Make an error template
+    -   validate the campground data, new or edit. Though we have added client side validations using bootstrap but still someone can use postman to work it's way around
+        Now we can add individually to each and every key or or we can use joi package
+    -   we define a schema with joi, now this is not a mongoose schema. We will validate it all using this schema, even before passing anything to mongoose
+
+Section-44 Data relationships with mongo
     -   
