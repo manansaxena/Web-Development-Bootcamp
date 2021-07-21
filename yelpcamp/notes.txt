@@ -69,4 +69,30 @@ Section-43 Errors and Validation (Yelpcamp)
     -   we define a schema with joi, now this is not a mongoose schema. We will validate it all using this schema, even before passing anything to mongoose
 
 Section-44 Data relationships with mongo
-    -   
+    -   Focus on one to many relationships
+        -   all depending on how much "many" is.
+        -   One to few
+            -   Embed the data directly into the document
+            -   mongoose adds an id to the embedded schema's too. we can turn it off _id:{id:false}
+        -   One to many
+            -   One option is to store your data separately, but then store references to document ID's somewhere inside
+                the parent
+            -   to do this we need to tell the type is mongoose.Schema.Types.ObjecyId if we are using that and the ref key which should be the model name we are linking with
+        -   Populate
+            -   add .populate(field) after the query
+        -   One to Bajillions
+            -   With thousands or more documents, it's better to store reference to the parent on the child element
+
+Section-45 Relationships between Express and Mongo
+    -   we need to setup the mongoose middleware on the schema, before the compilation of it to the model
+    -   in a model middleware this refers to the document whereas in the query middleware this refers to the query. 
+    -   in query middleware we have to wait til the query is completed to get an access to the document
+
+Section-46 Review model - Yelpcamp
+    -   Define reviewSchema and link it with campgroundSchema. One to Many relationships
+    -   Add the review form
+    -   Create Reviews
+    -   Validate Reviews
+    -   show reviews
+    -   delete individiual review
+    -   delete reviews when campground is deleted

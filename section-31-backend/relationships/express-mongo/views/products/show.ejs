@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= product.name %> </title>
+</head>
+<body>
+    <h1>Details of <%= product.name %></h1>
+    <h4><%= product.name %> is of price: $<%= product.price %> and is in category: <%= product.category %> </h4>
+    <button onclick="location.href='/products'" type="button">Go Back</button>
+    <button onclick="location.href='/products/<%=product._id%>/edit'" type="button">Edit</button>
+    <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+</body>
+</html>
