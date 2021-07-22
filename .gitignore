@@ -9,3 +9,7 @@
 /section-31-backend/express-error/node_modules
 /section-31-backend/relationships/node_modules
 /section-31-backend/relationships/express-mongo/node_modules
+/section-31-backend/routerDemo/node_modules
+/section-31-backend/cookieDemo/node_modules
+/section-31-backend/sessionDemo/node_modules
+/section-31-backend/bycryptDemo/node_modules

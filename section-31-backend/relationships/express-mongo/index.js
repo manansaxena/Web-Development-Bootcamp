@@ -5,6 +5,9 @@ const Product = require('./models/product')
 const methodOverride = require('method-override')
 const AppError = require('./AppError');
 const Farm = require('./models/farm')
+const flash = require('connect-flash');
+const session = require('express-session');
+
 
 // mongoose stuff
 mongoose.connect('mongodb://localhost:27017/farmAppTake2',{useNewUrlParser:true,useUnifiedTopology:true})
@@ -25,10 +28,20 @@ categories = ['fruit','vegetable','dairy']
 
 // express stuff
 const app = express();
+app.use(session({secret:'thisisasecret',resave:false,saveUninitialized:false}))
+app.use(flash());
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended:true}))
 app.use(methodOverride('_method'))
+
+
+app.use((req,res,next)=>{
+    res.locals.messages = req.flash('success');
+    next();
+})
+
+
 
 
 //--------------farm routes----------------
@@ -72,6 +85,7 @@ app.post('/farms/:id/products',wrapAsync(async(req,res,next)=>{
 app.post('/farms',wrapAsync(async(req,res,next)=>{
    const farm = new Farm(req.body);
    await farm.save()
+   req.flash('success','made a farm')
    res.redirect('/farms')
 }))
 

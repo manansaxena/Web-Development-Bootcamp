@@ -96,3 +96,84 @@ Section-46 Review model - Yelpcamp
     -   show reviews
     -   delete individiual review
     -   delete reviews when campground is deleted
+
+Section-47/48 Routers and Cookies and Sessions
+    -   Helps us group similar routes and move into a separate file. For ex - 
+        - /shelter
+        - /shelter/new
+        - /shelter/:id ...
+    
+    -   express.Router() gives us a router object 
+    -   we define a bunch of routers in a separate js file and then in the primary js file we use app.use(`whatever we want to prefx the routes with`,routers)
+    -   we can also define middleware separately which will apply to only those routes in the file
+
+    -   Cookies
+        -   Cookies are bits of information stored in the user's browser when browsing a particular website
+        -   Once a cookie is set, the user's browser will send the cookie on every subsequest request to the site
+        -   Cookies allow us to make HTTP stateful (we store some info, and when the user makes a request it sends that info to the server)
+        -   It could be preferences like dark mode and what not
+        -   Sending Cookies
+            -   we set cookie in response for as many routes we want. But if we visit that route once, then the cookie will be stored even if we go to other routes
+        -   Parsing Cookies
+            -   we need to install cookie-parser package
+            -   now we have cookies in the request as req.cookies
+        -   Signed Cookies
+            -   they are not for encrypting the data but a way of making sure that the cookie we sent and the data we recieved back from the user are same.
+                If they are, then we can assure that no one tampered it in the way
+            -   we won't find these in req.cookies, instead they will be in signedCookies
+            -   if we change the cookie, then the respone would be just false.
+    
+    -   Sessions
+        -   It's not very practical or secure to store a lot of data client-side using cookies. 
+        -   Sessions are server side data store that we use to make HTTP stateful. Instead of storing data in cookies, we store the data in server side
+            and then send browser a cookie that can be used to retrieve the data
+        -   when we go to a site, some data is stored in the session data store with an id and it sends that id as a cookie to the browser
+            then when we go to that url again, the browser sends us the cookie with the session id 
+        -   we will have a session object property available on our request object
+        -   resave - many session stores set an expiry time on a session if no changes are made and kills the session. We need resave in that to make sure that even if no changes are made, 
+                     our session is still active. As for cases in which the session store doesn't have this, we dont need to put resave
+        -   saveUninitialized - If during the lifetime of the request the session object isn't modified then, at the end of the request and when saveUninitialized is false, 
+                                the (still empty, because unmodified) session object will not be stored in the session store.
+        -   by default it's stored in memory store which should be changed eventually
+    -   Flash
+        -   It's basically to flash a message. And when we refresh the page, it goes away.
+        -   All request objects get a flash function. We pass in the key and the message.
+        -   better way to do this, we should make a middleware
+        -   res.locals - an object that contains response local variables scoped to the request and therefore available to only those views rendered in that res/req cycle
+    
+Section 49 - Restructuring and Flash - Yelpcamp
+    -   routing update
+        -   routers have a different set of params. so we need to specify merge params
+    -   to serve static assets we make a public folder and to make it usable we specify it in app.js
+    -   session setup
+    -   flash 
+
+Section 50 - Authentication
+    -   Authentication
+        -   The process of verifying who a particular user is.
+        -   We typically authenticate with a username and password combo but we can also use security questions or facial recog.
+    -   Authorization
+        -   The process of verifying what a specific user has access to
+        -   Generally, we authorize after a user has been authenticated
+    -   Passwords
+        -   Rule #1 - Never store passwords as is
+        -   we run all the passwords first through a hash function and then store it 
+        -   Hash maps input data of arbitary size to a fixed length output values
+        -   Cryptographic Hashing functions
+            -   should be a one way function
+            -   small change in input should yeild huge change in output  
+            -   same output for same input
+            -   unlikely to get a collision
+            -   for password hashing it should be slow
+        -   Salts
+            -   A salt is a random value added to password before we hash it
+            -   It helps insure unique hashes and mitigate common attacks
+        -   Bcrypt - passsword hashing function we used
+            -   genSalt(). Has a parameter named number of rounds, which basically is a way to increase difficulty. Higher the number, more difficult it is
+                this delay takes effect when we use the salt in the hashing function and not when we define it
+            -   hash(password,salt)
+            -   compare(password,hashedPassword) 
+
+Section 51 - Authentication Yelpcamp
+    -   Passport
+        -   
