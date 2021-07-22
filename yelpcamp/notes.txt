@@ -176,4 +176,6 @@ Section 50 - Authentication
 
 Section 51 - Authentication Yelpcamp
     -   Passport
-        -   
+        -   this is going to add on a field for password and username onto our schema. And additional functions
+                userSchema.plugin(passportLocalMongoose);
+        -   now configure passport in app.js file

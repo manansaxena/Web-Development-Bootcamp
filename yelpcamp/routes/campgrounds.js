@@ -4,7 +4,7 @@ const WrapAsync = require('../utils/WrapAsync');
 const ExpressError = require('../utils/ExpressError');
 const Campground = require('../models/campground');
 const {campgroundSchema} = require('../joiSchemas');
-
+const {isLoggedIn} = require('../middleware')
 
 const validateCampground = (req,res,next)=>{
     const result = campgroundSchema.validate(req.body);
@@ -22,11 +22,11 @@ router.get('/',WrapAsync(async(req,res)=>{
     res.render('campgrounds/index',{camps})
 }))
 
-router.get('/new',(req,res)=>{
-    res.render('campgrounds/new')
+router.get('/new',isLoggedIn,(req,res)=>{
+    return res.render('campgrounds/new')
 })
 
-router.post('/',validateCampground,WrapAsync(async (req,res,next)=>{
+router.post('/',isLoggedIn,validateCampground,WrapAsync(async (req,res,next)=>{
     // if(!req.body.campground) throw new ExpressError('Invalid Campground Data',400);
     const camp = new Campground(req.body.campground);
     await camp.save();
@@ -44,7 +44,7 @@ router.get('/:id',WrapAsync( async(req,res)=>{
     res.render('campgrounds/show',{camp})
 }))
 
-router.get('/:id/edit',WrapAsync(async (req,res)=>{
+router.get('/:id/edit',isLoggedIn,WrapAsync(async (req,res)=>{
     const {id} = req.params;
     const camp = await Campground.findById(id);
     if(!camp){
@@ -54,7 +54,7 @@ router.get('/:id/edit',WrapAsync(async (req,res)=>{
     res.render('campgrounds/edit',{camp})
 }))
 
-router.put('/:id',validateCampground,WrapAsync(async(req,res)=>{
+router.put('/:id',isLoggedIn,validateCampground,WrapAsync(async(req,res)=>{
     const {id} = req.params;
     const camp = await Campground.findByIdAndUpdate(id,{...req.body.campground})
     if(!camp){
@@ -65,7 +65,7 @@ router.put('/:id',validateCampground,WrapAsync(async(req,res)=>{
     res.redirect(`/campgrounds/${camp._id}`)
 }))
 
-router.delete('/:id',WrapAsync(async(req,res)=>{
+router.delete('/:id',isLoggedIn,WrapAsync(async(req,res)=>{
     const {id} = req.params;
     await Campground.findByIdAndDelete(id);
     req.flash('success','successfully deleted your campground')

@@ -4,10 +4,14 @@ const mongoose = require('mongoose');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
-const campgrounds = require('./routes/campgrounds')
-const reviews = require('./routes/reviews')
+const campgroundRoutes = require('./routes/campgrounds')
+const reviewRoutes = require('./routes/reviews')
+const userRoutes = require('./routes/users');
 const session = require('express-session');
 const flash = require('connect-flash');
+const passport = require('passport');
+const localStrategy = require('passport-local')
+const User = require('./models/user');
 
 mongoose.connect('mongodb://localhost:27017/yelp-camp',{useNewUrlParser:true,useCreateIndex:true,useUnifiedTopology:true,useFindAndModify:false});
 
@@ -40,17 +44,31 @@ app.use(session({
 }))
 app.use(flash())
 
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(User.authenticate()))
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use((req,res,next)=>{
+    res.locals.currentUser = req.user;
     res.locals.successMsg = req.flash('success');
     res.locals.errorMsg = req.flash('error')
     next();
 })
 
-app.use('/campgrounds',campgrounds);
-app.use('/campgrounds/:id/reviews',reviews);
 
 
+// app.get('/fakeUser',async(req,res)=>{
+//     const user = new User({email:'hello@gmail.com',username:'hello'});
+//     const newUser = await User.register(user,'hello');
+//     res.send(newUser)
+// })
 
+app.use('/campgrounds',campgroundRoutes);
+app.use('/campgrounds/:id/reviews',reviewRoutes);
+app.use('/',userRoutes)
 
 app.get('/',(req,res)=>{
     res.render('home')
