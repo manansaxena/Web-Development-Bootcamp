@@ -3,7 +3,7 @@
 <div class="row">
     <h1 class="text-center">Create a new campground</h1>
     <div class="col-6 offset-3 d-flex flex-column">
-        <form action="/campgrounds" method="POST" class="needs-validation" novalidate >
+        <form action="/campgrounds" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label" for="title">Enter the title</label>
                 <input class="form-control" type="text" name="campground[title]" id="title" required>
@@ -29,13 +29,18 @@
                     Looks Good
                 </div>
             </div>
+            <!-- <input type="file" name="image" id="image" multiple> -->
             <div class="mb-3">
+                <label for="image" class="form-label">Upload Image</label>
+                <input class="form-control" type="file" id="image" name="image" multiple>
+            </div>
+            <!-- <div class="mb-3">
                 <label class="form-label" for="image">Upload Image</label>
                 <input class="form-control" type="text" name="campground[image]" id="image" required>
                 <div class="valid-feedback">
                     Looks Good
                 </div>
-            </div>
+            </div> -->
             <div class="mb-3">
                 <label class="form-label" for="Description">Description</label>
                 <textarea class="form-control" type="text" name="campground[description]" id="Description" required></textarea>
@@ -43,11 +48,11 @@
                     Looks Good
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 d-grid">
                 <button class="btn btn-success mt-1">Add Campground</button>
             </div>
         </form>
-        <div class="col-1 mb-2">
+        <div class="mb-3 d-grid">
             <button class="btn btn-dark"type="button" onclick="location.href='/campgrounds'">Back</button>
         </div>
         

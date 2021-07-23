@@ -184,4 +184,22 @@ Section 51 - Authentication Yelpcamp
 Section 52 - Authorization Yelpcamp
     -   Way way too much to write notes on. Just check the commit and the lectures
 
+Section 53 - Controller and Restructuring
+    -   Just created a controller folder and moved the routing functions there.
+    -   Used starability for the star rating
 
+Section 54 - Upload Images
+    -   Add a file, it goes to cloudinary and we get a url which we store in mongo.
+    -   For uploading a file, we need to set the enc type on form to multi-part/form-data
+    -   To handle the multi-part form data we need another middleware named multer
+
+    -   setup env for cloudinary for not embedding api creds directly in our application
+        -   .env is not saved while uploading to github
+        -   in app.js we do,
+            if(process.env.NODE_ENV!=='production'){
+                require('dotenv').config();
+            }
+            this basically tells us to add the content of .env file to process.env iff in development mode
+    -   set up the cloudinary storage and what nots 
+
+Discontinuing the notes at this point because lot of libs and packages taught which are hard to document
